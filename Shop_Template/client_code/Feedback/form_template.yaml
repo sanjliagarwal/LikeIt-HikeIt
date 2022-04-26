@@ -1,0 +1,90 @@
+container:
+  type: ColumnPanel
+  properties: {role: null, tooltip: '', border: '', foreground: '', visible: true,
+    wrap_on: mobile, col_spacing: none, spacing_above: small, col_widths: '{"OMRFDC":11,"FUODEC":58,"WHTFDD":11}',
+    spacing_below: small, background: ''}
+components:
+- type: Label
+  properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:Primary
+      700', visible: true, text: We want to know if we are doing a good job!, font_size: 24,
+    font: Yeseva One, spacing_above: small, icon_align: left, spacing_below: small,
+    italic: false, background: '', bold: false, underline: false, icon: ''}
+  name: label_2
+  layout_properties: {grid_position: 'RWLIZE,JGBMSJ'}
+- type: Label
+  properties: {role: null, align: center, tooltip: '', border: '', foreground: 'theme:Primary
+      700', visible: true, text: 'Please tell us how much did you like our recommendations:',
+    font_size: 16, font: '', spacing_above: small, icon_align: left, spacing_below: none,
+    italic: false, background: '', bold: false, underline: false, icon: ''}
+  name: label_3
+  layout_properties: {grid_position: 'VGTHPW,PKVTAX'}
+- type: Spacer
+  properties: {height: 32}
+  name: spacer_3
+  layout_properties: {grid_position: 'IWOPPM,OMRFDC'}
+- type: ColumnPanel
+  properties: {role: null, tooltip: '', border: '', foreground: 'theme:Primary 700',
+    visible: true, wrap_on: mobile, col_spacing: medium, spacing_above: none, col_widths: '{}',
+    spacing_below: small, background: 'theme:Neutral'}
+  name: column_panel_1
+  layout_properties: {grid_position: 'IWOPPM,FUODEC'}
+  components:
+  - type: DropDown
+    properties:
+      role: null
+      align: full
+      tooltip: ''
+      placeholder: ''
+      border: ''
+      enabled: true
+      foreground: ''
+      items: []
+      visible: true
+      font_size: null
+      font: ''
+      spacing_above: none
+      spacing_below: small
+      italic: false
+      background: ''
+      bold: false
+      underline: false
+      include_placeholder: false
+    name: drop_down_feedback
+    layout_properties: {grid_position: 'BTZDVT,SGURLI'}
+  - type: Label
+    properties: {role: null, align: center, tooltip: '', border: '', foreground: '',
+      visible: true, text: 'Is there any feedback or suggestion that you want to share
+        with us?', font_size: 16, font: '', spacing_above: small, icon_align: left,
+      spacing_below: none, italic: false, background: '', bold: false, underline: false,
+      icon: ''}
+    name: label_1
+    layout_properties: {grid_position: 'LPBBXB,FBXTKM'}
+  - type: TextArea
+    properties: {role: null, align: left, height: 110, tooltip: '', placeholder: Type your feedback here...,
+      border: '', enabled: true, foreground: '', visible: true, text: '', font_size: null,
+      auto_expand: false, font: '', spacing_above: none, spacing_below: small, italic: false,
+      background: '', bold: false, underline: false}
+    name: message_box
+    layout_properties: {grid_position: 'ZOWEJE,HPBKUX'}
+- type: Spacer
+  properties: {height: 112}
+  name: spacer_2
+  layout_properties: {grid_position: 'IWOPPM,WHTFDD'}
+- type: Button
+  properties: {role: secondary-color, align: center, tooltip: '', border: '', enabled: true,
+    foreground: '', visible: true, text: send, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: 'fa:arrow-right'}
+  name: send_button
+  layout_properties: {grid_position: 'ZWSLLM,MOHPZR'}
+  event_bindings: {click: send_button_click}
+- type: Label
+  properties: {role: logo, align: center, tooltip: '', border: '', foreground: '',
+    visible: true, text: Hike It!, font_size: null, font: '', spacing_above: small,
+    icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+    underline: false, icon: ''}
+  name: label_1_copy_3
+  layout_properties:
+    col_widths: {}
+    grid_position: XZBPDY,JYGBWI
+is_package: true

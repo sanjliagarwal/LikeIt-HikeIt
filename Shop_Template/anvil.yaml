@@ -1,0 +1,96 @@
+dependencies: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {auto_create_missing_columns: true}
+- source: /runtime/services/google.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/stripe.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/anvil/users.yml
+  client_config: {allow_signup: true, enable_automatically: true, use_email: true,
+    confirm_email: false, allow_remember_me: false, remember_me_days: 30}
+  server_config:
+    user_table: users
+    email_content:
+      reset_password: {html: '<p>Hi there,
+
+
+          </p><p>You have requested a password reset for your account {{email}}. To
+          reset your password, click the link below:
+
+
+          </p><p>{{reset_link}}
+
+
+          </p><p>This link will expire in ten minutes.</p>'}
+startup: {type: form, module: Startup}
+package_name: Shop_Template
+allow_embedding: false
+name: HIKE IT!
+runtime_options: {version: 2, client_version: '3', server_version: python3-full, server_spec: null}
+metadata: {}
+startup_form: null
+native_deps: {head_html: '<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&family=Yeseva+One&display=swap"
+    rel="stylesheet">'}
+db_schema:
+  users:
+    title: Users
+    client: none
+    server: full
+    columns:
+    - name: email
+      admin_ui: {width: 200}
+      type: string
+    - name: enabled
+      admin_ui: {width: 100}
+      type: bool
+    - name: signed_up
+      admin_ui: {width: 200}
+      type: datetime
+    - name: password_hash
+      admin_ui: {width: 200}
+      type: string
+    - name: last_login
+      admin_ui: {width: 200}
+      type: datetime
+  userprofile:
+    title: User-Profile
+    client: full
+    server: full
+    columns:
+    - name: email
+      admin_ui: {width: 200}
+      type: string
+    - name: name
+      admin_ui: {width: 200}
+      type: string
+    - name: difficulty_level
+      admin_ui: {width: 200}
+      type: number
+  usertrail:
+    title: Table 3
+    client: none
+    server: full
+    columns:
+    - name: trail_id
+      admin_ui: {width: 200}
+      type: string
+    - name: user_id
+      admin_ui: {width: 200}
+      type: string
+    - name: rating
+      admin_ui: {width: 200}
+      type: number
+    - name: visited
+      admin_ui: {width: 200}
+      type: bool
+  table_4:
+    title: Table 4
+    client: none
+    server: full
+    columns: []
+uplink_visible: true
+renamed: true
